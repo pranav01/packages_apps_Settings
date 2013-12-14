@@ -106,9 +106,17 @@
 		android:title="@string/ra_isotopes_title"
 		android:fragment="com.android.settings.radium.RadiumIsotopes"
 	        android:icon="@drawable/ic_radium_isotopes"
-		/>      
-
-	  <!-- Sound -->
+		/> 
+        
+        <!-- TRDS -->
+        <dashboard-tile
+                android:id="@+id/theme_settings"
+                android:icon="@drawable/ic_settings_theme"
+                android:fragment="com.android.settings.radium.themes.ThemeSettings"
+                android:title="@string/theme_settings_title"
+                />
+        
+        <!-- Sound -->
         <dashboard-tile
                 android:id="@+id/sound_settings"
                 android:title="@string/category_sounds"
