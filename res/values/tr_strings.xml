@@ -22,4 +22,6 @@
      <!-- BitSyko Layers -->
      <string name="bitsyko_layers">Layers</string>
 
+     <!-- SuperSU -->
+     <string name="supersu_title">SuperSU</string>
 </resources>
