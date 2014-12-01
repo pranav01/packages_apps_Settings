@@ -579,10 +579,10 @@
     <string name="selinux_permissive_title">Permissive</string>
     <string name="selinux_enforcing_title">Enforcing</string>
 
- <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
+    <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
     <string name="supersu_title">SuperSU</string>
 
-<!-- Partition Info -->
+    <!-- Partition Info -->
     <string name="partition_info_title">Partition info</string>
     <string name="partition_info_system">/system</string>
     <string name="partition_info_data">/data</string>
@@ -591,6 +591,9 @@
     <string name="partition_info_sdext">/sd-ext (EXT)</string>
     <string name="partition_info_used_of">/</string>
 
+   <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">RAM</string>
 
 </resources>
 
