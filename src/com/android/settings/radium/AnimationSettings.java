@@ -50,9 +50,12 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "AnimationSettings";
 
+    private ListPreference mListViewAnimation;
+    private ListPreference mListViewInterpolator;
     private ListPreference mToastAnimation;
 
-     
+    private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
+    private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
  
@@ -68,8 +71,23 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getContentResolver();
 
        mContext = getActivity();
-       
-                 
+
+        // ListView Animations
+        mListViewAnimation = (ListPreference) prefSet.findPreference(KEY_LISTVIEW_ANIMATION);
+        int listviewanimation = Settings.System.getInt(getContentResolver(),
+                Settings.System.LISTVIEW_ANIMATION, 0);
+        mListViewAnimation.setValue(String.valueOf(listviewanimation));
+        mListViewAnimation.setSummary(mListViewAnimation.getEntry());
+        mListViewAnimation.setOnPreferenceChangeListener(this);
+
+        mListViewInterpolator = (ListPreference) prefSet.findPreference(KEY_LISTVIEW_INTERPOLATOR);
+        int listviewinterpolator = Settings.System.getInt(getContentResolver(),
+                Settings.System.LISTVIEW_INTERPOLATOR, 0);
+        mListViewInterpolator.setValue(String.valueOf(listviewinterpolator));
+        mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
+        mListViewInterpolator.setOnPreferenceChangeListener(this);
+        mListViewInterpolator.setEnabled(listviewanimation > 0);
+        
 	// Toast animation
         mToastAnimation = (ListPreference)findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
@@ -87,8 +105,25 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+	final String key = preference.getKey();
 
-        final String key = preference.getKey();
+        if (KEY_LISTVIEW_ANIMATION.equals(key)) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mListViewAnimation.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LISTVIEW_ANIMATION,
+                    value);
+            mListViewAnimation.setSummary(mListViewAnimation.getEntries()[index]);
+            mListViewInterpolator.setEnabled(value > 0);
+        }
+        if (KEY_LISTVIEW_INTERPOLATOR.equals(key)) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mListViewInterpolator.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LISTVIEW_INTERPOLATOR,
+                    value);
+            mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
+        }
         if (preference == mToastAnimation) {
             int index = mToastAnimation.findIndexOfValue((String) newValue);
             Settings.System.putString(getContentResolver(), Settings.System.TOAST_ANIMATION, (String) newValue);
