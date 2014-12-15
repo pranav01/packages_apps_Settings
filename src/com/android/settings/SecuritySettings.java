@@ -82,6 +82,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final Intent TRUST_AGENT_INTENT =
             new Intent(TrustAgentService.SERVICE_INTERFACE);
 
+    private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
     private static final String KEY_DEVICE_ADMIN_CATEGORY = "device_admin_category";
 
     // Misc Settings
@@ -111,7 +112,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
     // These switch preferences need special handling since they're not all stored in Settings.
     private static final String SWITCH_PREFERENCE_KEYS[] = { KEY_SHOW_PASSWORD,
-            KEY_TOGGLE_INSTALL_APPLICATIONS, LOCK_TO_CYANOGEN_ACCOUNT };
+            KEY_TOGGLE_INSTALL_APPLICATIONS, KEY_VISIBLE_GESTURE, LOCK_TO_CYANOGEN_ACCOUNT };
 
     // Only allow one trust agent on the platform.
     private static final boolean ONLY_ONE_TRUST_AGENT = false;
@@ -121,6 +122,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private SubscriptionManager mSubscriptionManager;
 
     private LockPatternUtils mLockPatternUtils;
+    private SwitchPreference mVisibleGesture;
 
     private SwitchPreference mShowPassword;
 
@@ -143,6 +145,24 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
         mLockPatternUtils = new LockPatternUtils(getActivity());
         mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
+
+    private static int getResIdForLockUnlockScreen(Context context,
+            LockPatternUtils lockPatternUtils) {
+        int resid = 0;
+        if (!lockPatternUtils.isSecure()) {
+            // if there are multiple users, disable "None" setting
+            UserManager mUm = (UserManager) context. getSystemService(Context.USER_SERVICE);
+            List<UserInfo> users = mUm.getUsers(true);
+            final boolean singleUser = users.size() == 1;
+
+        } else {
+            switch (lockPatternUtils.getKeyguardStoredPasswordQuality()) {
+                case DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK:
+                    resid = R.xml.security_settings_gesture;
+                    break;
+            }
+        }
+        return resid;
     }
 
     /**
@@ -191,6 +211,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
             for (int i = 0; i < numPhones; i++) {
                 final Preference pref;
+
+        // visible gesture
+        mVisibleGesture = (SwitchPreference) root.findPreference(KEY_VISIBLE_GESTURE);
 
                 if (numPhones > 1) {
                     SubscriptionInfo sir = subMgr.getActiveSubscriptionInfoForSimSlotIndex(i);
@@ -501,9 +524,12 @@ public class SecuritySettings extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object value) {
         boolean result = true;
         final String key = preference.getKey();
+        final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
         if (KEY_SHOW_PASSWORD.equals(key)) {
             Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
                     ((Boolean) value) ? 1 : 0);
+        } else if (KEY_VISIBLE_GESTURE.equals(key)) {
+            lockPatternUtils.setVisibleGestureEnabled((Boolean) value);
         } else if (KEY_TOGGLE_INSTALL_APPLICATIONS.equals(key)) {
             if ((Boolean) value) {
                 mToggleAppInstallation.setChecked(false);
