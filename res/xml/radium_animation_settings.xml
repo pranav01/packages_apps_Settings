@@ -15,7 +15,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/ani_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+	<!-- AOKP custom system animations -->	
+        <PreferenceScreen
+        android:key="aokp_animation"
+        android:title="@string/aokp_animation_title"
+        android:summary="@string/aokp_animation_summary"
+        android:fragment="com.android.settings.radium.AnimationControls" />
     
+	<!-- Toast animations -->
         <ListPreference
                 android:key="toast_animation"
                 android:title="@string/toast_animation_title"
@@ -23,6 +31,7 @@
                 android:entryValues="@array/toast_animation_values"
                 android:persistent="false" />
 
+	<!-- Listview animations -->
         <ListPreference
             android:key="listview_animation"
             android:dialogTitle="@string/listview_animation_title"
@@ -31,6 +40,7 @@
             android:entryValues="@array/listview_animation_values"
             android:defaultValue="0" />
 
+	<!-- Listview interpolator -->
         <ListPreference
             android:key="listview_interpolator"
             android:dialogTitle="@string/listview_interpolator_title"
