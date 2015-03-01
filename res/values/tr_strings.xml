@@ -644,4 +644,9 @@
     <string name="status_bar_radium_logo_title">Radium logo</string>
     <string name="status_bar_radium_logo_summary">Enable to show Radium logo on the left side of statusbar</string>
 
+    <!-- Status bar greeting -->
+    <string name="status_bar_greeting_title">Greeting</string>
+    <string name="status_bar_greeting_summary">Display a custom greeting in the status bar after unlocking the device</string>
+    <string name="status_bar_greeting_dialog">Set your greeting</string>
+
 </resources>
