@@ -18,4 +18,8 @@
     <string name="mod_version">Radium version</string>
     <string name="mod_version_default">Unknown</string>
 
+
+     <!-- BitSyko Layers -->
+     <string name="bitsyko_layers">Layers</string>
+
 </resources>
