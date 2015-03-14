@@ -35,4 +35,11 @@
         android:icon="@drawable/ic_settings_sidebar"
 	settings:advanced="true" />
 
+    <!-- Heads up notifications -->
+    <Preference
+         android:key="heads_up_enabled"
+         android:fragment="com.android.settings.radium.HeadsUpSettings"
+         android:title="@string/category_heads_up"
+	 android:summary="@string/heads_up_summary" />
+
 </PreferenceScreen>

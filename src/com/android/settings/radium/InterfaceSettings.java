@@ -23,6 +23,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -56,6 +58,8 @@ public class InterfaceSettings extends SettingsPreferenceFragment
 		implements Indexable  {
     private static final String TAG = "InterfaceSettings";
 
+    private Preference mHeadsUp;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,11 +67,17 @@ public class InterfaceSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.radium_interface_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
 
+        mHeadsUp = findPreference(Settings.System.HEADS_UP_NOTIFICATION);
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        boolean headsUpEnabled = Settings.System.getInt(
+                getContentResolver(), Settings.System.HEADS_UP_NOTIFICATION, 1) != 0;
+        mHeadsUp.setSummary(headsUpEnabled
+                ? R.string.summary_heads_up_enabled : R.string.summary_heads_up_disabled);
     }
 	
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

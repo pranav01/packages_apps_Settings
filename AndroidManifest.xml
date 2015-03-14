@@ -1823,6 +1823,7 @@
         />
 
         <!-- CyanogenMod activities Start -->
+
         <activity android:name="Settings$ProfilesSettingsActivity"
                 android:label="@string/profile_settings"
                 android:taskAffinity=""
@@ -2349,6 +2350,7 @@
         <activity android:name=".Settings$LockScreenSettingsActivity"
                   android:label="@string/lockscreen_settings"
                   android:taskAffinity="">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.LOCK_SCREEN_SETTINGS" />
