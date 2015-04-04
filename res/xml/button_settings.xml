@@ -86,6 +86,12 @@
             android:key="pie_settings"
             android:fragment="com.android.settings.radium.PieControl"
             android:title="@string/pie_control_title" />
+	        
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+           android:key="navigation_bar_tint"
+           android:title="@string/navbar_button_tint_title"
+           android:defaultValue="#ffffff"
+	   android:dependency="enable_nav_bar" />
 
     </PreferenceCategory>
 
