@@ -27,4 +27,12 @@
 	android:icon="@drawable/ic_settings_gestures"
 	settings:advanced="true" />
 
+    <!-- Circle app bar -->
+    <PreferenceScreen
+        android:key="app_circle_bar"
+        android:fragment="com.android.settings.radium.AppCircleBar"
+        android:title="@string/app_circle_bar_title"
+        android:icon="@drawable/ic_settings_sidebar"
+	settings:advanced="true" />
+
 </PreferenceScreen>
