@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2015 The Team-Radium Project
+<!-- Copyright (C) 2014 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,16 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
 
-    <!-- DSLV colors -->
-    <color name="dslv_icon_dark">#80000000</color>
-    <color name="dslv_float_cackground_color">#ffe1e1e0</color>
-
-    <color name="white">#ffffffff</color>
-
-    <!-- Color picker -->
-    <color name="divider">#1fffffff</color>
-    <color name="ripple_material_dark">#4dffffff</color>
-
-</resources>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/ic_action_edit_alpha"
+    android:tint="@color/white" />
