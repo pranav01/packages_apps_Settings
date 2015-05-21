@@ -42,4 +42,10 @@
          android:title="@string/category_heads_up"
 	 android:summary="@string/heads_up_summary" />
 
+    <!-- Task manager -->
+    <SwitchPreference
+         android:key="enable_task_manager"
+         android:title="@string/enable_task_manager_title"
+         android:summary="@string/enable_task_manager_summary" />
+
 </PreferenceScreen>

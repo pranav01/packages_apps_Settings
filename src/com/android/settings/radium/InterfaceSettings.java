@@ -42,6 +42,8 @@ import android.util.Log;
 import android.view.WindowManagerGlobal;
 import android.widget.EditText;
 
+import com.android.settings.util.Helpers;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -57,8 +59,10 @@ import java.util.List;
 public class InterfaceSettings extends SettingsPreferenceFragment
 		implements Indexable  {
     private static final String TAG = "InterfaceSettings";
+    private static final String ENABLE_TASK_MANAGER = "enable_task_manager";
 
     private Preference mHeadsUp;
+    private SwitchPreference mEnableTaskManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,7 +72,9 @@ public class InterfaceSettings extends SettingsPreferenceFragment
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mHeadsUp = findPreference(Settings.System.HEADS_UP_NOTIFICATION);
-
+        mEnableTaskManager = (SwitchPreference) findPreference(ENABLE_TASK_MANAGER);
+        mEnableTaskManager.setChecked((Settings.System.getInt(resolver,
+                Settings.System.ENABLE_TASK_MANAGER, 0) == 1));
     }
 
     @Override
@@ -78,6 +84,18 @@ public class InterfaceSettings extends SettingsPreferenceFragment
                 getContentResolver(), Settings.System.HEADS_UP_NOTIFICATION, 1) != 0;
         mHeadsUp.setSummary(headsUpEnabled
                 ? R.string.summary_heads_up_enabled : R.string.summary_heads_up_disabled);
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if  (preference == mEnableTaskManager) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.ENABLE_TASK_MANAGER, checked ? 1:0);
+            Helpers.restartSystemUI();
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 	
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
