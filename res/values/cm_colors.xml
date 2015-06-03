@@ -65,4 +65,5 @@
 
     <!-- Multi-sim Edit Name Text Color -->
     <color name="msim_edit_name_text_color">@android:color/black</color>
+
 </resources>
