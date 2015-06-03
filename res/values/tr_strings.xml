@@ -317,5 +317,6 @@
 
     <!-- Notification tile -->
     <string name="qs_notifications_tile">Notifications</string>
+    <string name="qs_power_menu_tile">Power menu</string>
 
 </resources>
