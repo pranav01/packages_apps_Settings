@@ -27,14 +27,8 @@
 
     <!-- Launch Dev Tools -->
     <string name="development_tools_title">Development tools</string>
-<<<<<<< HEAD:res/values/cm_strings.xml
-=======
-    
-    <!-- OwnSettings -->
-    <string name="own_settings_title">OwnSettings</string>
-    <string name="own_cat_title">Categories</string>
+
     <string name="ani_settings_title">Animation Settings</string>
->>>>>>> ed6ce2c... Create Own Animation Settings with Toast Animations (1/2):res/values/own_strings.xml
 
     <!-- Setting checkbox title for root access -->
     <string name="root_access">Root access</string>
@@ -1245,8 +1239,6 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
-<<<<<<< HEAD:res/values/cm_strings.xml
-=======
 
     <!-- Toast animations -->
     <string name="toast_animation_title">Toast animations</string>
@@ -1266,5 +1258,4 @@
     <string name="toast_GrowFadeBottom_animation">Grow fade bottom</string>
     <string name="toast_Translucent_animation">Translucent animation</string>
 
->>>>>>> ed6ce2c... Create Own Animation Settings with Toast Animations (1/2):res/values/own_strings.xml
 </resources>

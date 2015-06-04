@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 The Android Open Source Project
+<!-- Copyright (C) 2015 The Team-Radium Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -100,7 +100,15 @@
             android:id="@+id/device_section"
             android:title="@string/header_category_device" >
 
-        <!-- Sound -->
+	<!-- Radium Isotopes -->
+	<dashboard-tile
+		android:id="@+id/isotopes"
+		android:title="@string/ra_isotopes_title"
+		android:fragment="com.android.settings.radium.isotopes"
+	        android:icon="@drawable/ic_radium_isotopes"
+		/>      
+
+	  <!-- Sound -->
         <dashboard-tile
                 android:id="@+id/sound_settings"
                 android:title="@string/category_sounds"

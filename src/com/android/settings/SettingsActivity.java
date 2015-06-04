@@ -110,6 +110,7 @@ import com.android.settings.notification.ConditionProviderSettings;
 import com.android.settings.notification.NotificationAccessSettings;
 import com.android.settings.notification.NotificationStation;
 import com.android.settings.notification.ZenModeSettings;
+import com.android.settings.radium.isotopes;
 import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.sim.SimSettings;
@@ -253,6 +254,7 @@ public class SettingsActivity extends Activity
             R.id.accessibility_settings,
             R.id.print_settings,
             R.id.home_settings,
+	    R.id.isotopes,
             R.id.status_bar_settings,
             R.id.dashboard,
             R.id.privacy_settings_cyanogenmod
@@ -276,8 +278,11 @@ public class SettingsActivity extends Activity
             UserDictionaryList.class.getName(),
             UserDictionarySettings.class.getName(),
             HomeSettings.class.getName(),
+	    isotopes.class.getName(),
             DisplaySettings.class.getName(),
             DeviceInfoSettings.class.getName(),
+
+
             ManageApplications.class.getName(),
             ProcessStatsUi.class.getName(),
             NotificationStation.class.getName(),

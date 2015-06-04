@@ -2270,7 +2270,22 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/sim_settings" />
         </activity>
-
+	
+	<!-- Radium Isotopes -->
+	<activity android:name="Settings$MainSettingsActivity"
+	    android:label="@string/ra_isotopes_title"
+	    android:taskAffinity="">
+	    <intent-filter>
+		<action android:name="android.intent.action.MAIN" />
+		<category android:name="android.intent.category.DEFAULT" />
+	    </intent-filter>
+	    <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.radium.isotopes" />
+        </activity>
+		 
+        <activity
+             android:name=".radium.isotopes" />
+  
         <activity android:name=".sim.SimDialogActivity"
                 android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
                 android:label="@string/sim_settings_title"
