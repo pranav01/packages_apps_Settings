@@ -97,7 +97,7 @@ public final class SearchIndexableResources {
                         Ranking.getRankForClassName(RadiumIsotopes.class.getName()),
                         NO_DATA_RES_ID,
                         RadiumIsotopes.class.getName(),
-                        R.drawable.ic_settings_interface));
+                        R.drawable.ic_radium_isotopes));
 
 	  sResMap.put(SimSettings.class.getName(),
                 new SearchIndexableResource(

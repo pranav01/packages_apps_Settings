@@ -69,6 +69,7 @@
     <string name="color_default">Default</string>
 
     <!-- Toast animations -->
+    <string name="ani_settings_title">Animation Settings</string>
     <string name="toast_animation_title">Toast animations</string>
     <string name="toast_animation_summary">Select and preview system toast animation</string>
     <string name="toast_none_animation">None</string>
