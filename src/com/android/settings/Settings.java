@@ -47,7 +47,7 @@ public class Settings extends SettingsActivity {
     public static class DeviceInfoSettingsActivity extends SettingsActivity { /* empty */ }
     public static class ApplicationSettingsActivity extends SettingsActivity { /* empty */ }
     public static class ManageApplicationsActivity extends SettingsActivity { /* empty */ }
-    public static class AniSettings extends SettingsActivity { /* empty */ }
+    public static class AnimationSettings extends SettingsActivity { /* empty */ }
     public static class AppOpsSummaryActivity extends SettingsActivity {
         @Override
         public boolean isValidFragment(String className) {
@@ -98,7 +98,7 @@ public class Settings extends SettingsActivity {
     public static class AppNotificationSettingsActivity extends SettingsActivity { /* empty */ }
     public static class OtherSoundSettingsActivity extends SettingsActivity { /* empty */ }
     public static class QuickLaunchSettingsActivity extends SettingsActivity { /* empty */ }
-    public static class MainSettingsActivity extends SettingsActivity { }
+    public static class RadiumIsotopesActivity extends SettingsActivity { }
     public static class TopLevelSettings extends SettingsActivity { /* empty */ }
     public static class ApnSettingsActivity extends SettingsActivity { /* empty */ }
     public static class BlacklistSettingsActivity extends SettingsActivity { /* empty */ }

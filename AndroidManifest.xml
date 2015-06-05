@@ -2272,7 +2272,7 @@
         </activity>
 	
 	<!-- Radium Isotopes -->
-	<activity android:name="Settings$MainSettingsActivity"
+	<activity android:name="Settings$RadiumIsotopesActivity"
 	    android:label="@string/ra_isotopes_title"
 	    android:taskAffinity="">
 	    <intent-filter>
@@ -2280,7 +2280,7 @@
 		<category android:name="android.intent.category.DEFAULT" />
 	    </intent-filter>
 	    <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.radium.isotopes" />
+                android:value="com.android.settings.radium.RadiumIsotopes" />
         </activity>
 		 
         <activity

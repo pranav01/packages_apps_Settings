@@ -45,7 +45,7 @@ import com.android.settings.R;
 import java.io.File;
 import java.io.IOException;
 
-public class AniSettings extends SettingsPreferenceFragment implements
+public class AnimationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "AnimationSettings";
@@ -62,7 +62,7 @@ public class AniSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.own_ani_settings);
+        addPreferencesFromResource(R.xml.radium_animation_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getContentResolver();

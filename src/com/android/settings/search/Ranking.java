@@ -47,7 +47,7 @@ import com.android.settings.voice.VoiceInputSettings;
 import com.android.settings.wifi.AdvancedWifiSettings;
 import com.android.settings.wifi.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.WifiSettings;
-import com.android.settings.radium.isotopes;
+import com.android.settings.radium.RadiumIsotopes;
 import java.util.HashMap;
 
 /**
@@ -109,7 +109,7 @@ public final class Ranking {
         sRankMap.put(HomeSettings.class.getName(), RANK_HOME);
 
 	// Radium Isotopes
-	sRankMap.put(HomeSettings.class.getName(), RANK_ISOTOPES);
+	sRankMap.put(RadiumIsotopes.class.getName(), RANK_ISOTOPES);
 
         // Display
         sRankMap.put(DisplaySettings.class.getName(), RANK_DISPLAY);

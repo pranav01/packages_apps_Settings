@@ -28,10 +28,8 @@
                 android:id="@+id/radium_animation_settings"
                 android:title="@string/ani_settings_title"
                 android:fragment="com.android.settings.radium.AnimationSettings"
-                />      
-
-
- 
-</PreferenceCategory>
+                />
+      
+    </PreferenceCategory>
 
 </PreferenceScreen>

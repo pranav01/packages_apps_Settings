@@ -111,7 +111,7 @@ import com.android.settings.notification.ConditionProviderSettings;
 import com.android.settings.notification.NotificationAccessSettings;
 import com.android.settings.notification.NotificationStation;
 import com.android.settings.notification.ZenModeSettings;
-import com.android.settings.radium.isotopes;
+import com.android.settings.radium.RadiumIsotopes;
 import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.sim.SimSettings;
@@ -279,7 +279,7 @@ public class SettingsActivity extends Activity
             UserDictionaryList.class.getName(),
             UserDictionarySettings.class.getName(),
             HomeSettings.class.getName(),
-	    isotopes.class.getName(),
+	    RadiumIsotopes.class.getName(),
             DisplaySettings.class.getName(),
             DeviceInfoSettings.class.getName(),
 
