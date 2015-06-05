@@ -52,7 +52,7 @@ import com.android.settings.voice.VoiceInputSettings;
 import com.android.settings.wifi.AdvancedWifiSettings;
 import com.android.settings.wifi.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.WifiSettings;
-import com.android.settings.radium.isotopes;
+import com.android.settings.radium.RadiumIsotopes;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -92,11 +92,11 @@ public final class SearchIndexableResources {
                         BluetoothSettings.class.getName(),
                         R.drawable.ic_settings_bluetooth2));
 
-      sResMap.put(MainSettings.class.getName(),
+      sResMap.put(RadiumIsotopes.class.getName(),
                 new SearchIndexableResource(
-                        Ranking.getRankForClassName(isotopes.class.getName()),
+                        Ranking.getRankForClassName(RadiumIsotopes.class.getName()),
                         NO_DATA_RES_ID,
-                        MainSettings.class.getName(),
+                        RadiumIsotopes.class.getName(),
                         R.drawable.ic_settings_interface));
 
 	  sResMap.put(SimSettings.class.getName(),

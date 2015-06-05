@@ -104,7 +104,7 @@
 	<dashboard-tile
 		android:id="@+id/isotopes"
 		android:title="@string/ra_isotopes_title"
-		android:fragment="com.android.settings.radium.isotopes"
+		android:fragment="com.android.settings.radium.RadiumIsotopes"
 	        android:icon="@drawable/ic_radium_isotopes"
 		/>      
 
