@@ -33,7 +33,7 @@
         <!-- Lock Screen Settings -->        
         <PreferenceScreen
                 android:id="@+id/lock_settings"
-                android:title="@string/own_lockscreen_title"
+                android:title="@string/radium_lockscreen_title"
                 android:fragment="com.android.settings.radium.LockSettings"
                 />  
 

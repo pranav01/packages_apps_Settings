@@ -54,7 +54,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.internal.util.radium.ActionConfig;
-import com.android.internal.util.radium.ActionConstants;
+import com.android.internal.util.radium.RadiumActionConstants;
 import com.android.internal.util.radium.ActionHelper;
 import com.android.internal.util.radium.ImageHelper;
 import com.android.internal.util.radium.DeviceUtils;
@@ -785,7 +785,7 @@ public class ActionListViewSettings extends ListFragment implements
 
                         for (int i = 0; i < getOwner().mActionDialogValues.length; i++) {
                             if (!getOwner().mActionDialogValues[i]
-                                    .equals(OwnActionConstants.ACTION_NULL)) {
+                                    .equals(RadiumActionConstants.ACTION_NULL)) {
                                 finalEntriesList.add(getOwner().mActionDialogEntries[i]);
                                 finalValuesList.add(getOwner().mActionDialogValues[i]);
                             }
@@ -836,7 +836,7 @@ public class ActionListViewSettings extends ListFragment implements
                             switch(which) {
                                 case 0: // Default
                                     getOwner().updateAction(null, null,
-                                        OwnActionConstants.ICON_EMPTY,
+                                        RadiumActionConstants.ICON_EMPTY,
                                         getOwner().mPendingIndex, false);
                                     getOwner().mPendingIndex = -1;
                                     break;
