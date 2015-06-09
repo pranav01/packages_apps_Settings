@@ -102,7 +102,7 @@
 
 	<!-- Radium Isotopes -->
 	<dashboard-tile
-		android:id="@+id/isotopes"
+		android:id="@+id/radium_isotopes"
 		android:title="@string/ra_isotopes_title"
 		android:fragment="com.android.settings.radium.RadiumIsotopes"
 	        android:icon="@drawable/ic_radium_isotopes"
