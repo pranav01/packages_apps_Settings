@@ -2284,7 +2284,7 @@
         </activity>
 		 
         <activity
-             android:name=".radium.isotopes" />
+             android:name=".radium.RadiumIsotopes" />
   
         <activity android:name=".sim.SimDialogActivity"
                 android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
