@@ -62,6 +62,10 @@ public class ThemeSettings extends SettingsPreferenceFragment {
     private int mCurrentState = 0;
     private static final int MENU_RESET = Menu.FIRST;
 
+    public ThemeSettings()
+    {
+        //Logcat said something about no public constructors.........
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
