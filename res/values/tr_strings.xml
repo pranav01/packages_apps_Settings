@@ -400,4 +400,7 @@
     <string name="updater_title">Updates</string>
     <string name="updater_summary">Check for updates and more</string>
 
+    <!-- Navigation bar button color -->
+    <string name="navbar_button_tint_title">Navigation button tint</string>
+ 
 </resources>

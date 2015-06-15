@@ -859,5 +859,4 @@
   <string name="lock_to_cyanogen_disable_msg">Door deze functie uit te schakelen kunnen onbevoegde gebruikers uw telefoon herstellen naar fabrieksinstellingen wanneer deze gestolen is. Uw persoonlijke gegevens zijn mogelijk niet beschermd. Wilt u deze functie toch uitschakelen?</string>
   <string name="lock_to_cyanogen_master_clear_warning">Apparaatbeveiliging is ingeschakeld. Schakel dit uit als u door wilt gaan met het opnieuw instellen van uw apparaat.</string>
   <string name="bluetooth_pan_profile_summary_use_for_error">Verbindingsfout; is Bluetooth-tethering ingeschakeld op dit apparaat?</string>
-
 </resources>
