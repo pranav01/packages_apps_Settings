@@ -396,4 +396,8 @@
     <string name="title_pref_menu_display">Menu visibility</string>
     <string name="summary_pref_menu_display">How and when do you want the menu buttons to appear?</string>
 
+    <!-- OTACenter -->
+    <string name="updater_title">Updates</string>
+    <string name="updater_summary">Check for updates and more</string>
+
 </resources>

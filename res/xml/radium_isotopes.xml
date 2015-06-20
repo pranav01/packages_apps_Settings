@@ -43,6 +43,16 @@
                 android:title="@string/ani_settings_title"
                 android:fragment="com.android.settings.radium.AnimationSettings"
                 />
+
+        <!-- Updater -->
+       	<PreferenceScreen
+                android:key="update_settings"
+                android:title="@string/updater_title"
+                android:summary="@string/updater_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.radium.ota"
+                    android:targetClass="com.radium.center.OTACenter" />
+        </PreferenceScreen>
       
     </PreferenceCategory>
 
