@@ -477,19 +477,6 @@
         <item>2</item>
     </string-array>
 
-    <!-- Themes -->
-    <string-array name="theme_auto_mode_entries">
-	<item>@string/theme_auto_mode_off</item>
-	<item>@string/theme_auto_mode_lightsensor</item>
-	<item>@string/theme_auto_mode_twilight</item>
-    </string-array>
-
-    <string-array name="theme_auto_mode_values" translatable="false">
-	<item>0</item>
-	<item>1</item>
-	<item>2</item>
-    </string-array>
-
 	<!-- Nav Bar Tweaks -->
     <string-array name="navigation_bar_width_entries" translatable="false">
         <item>@string/navigation_bar_size_42_dp_default</item>
