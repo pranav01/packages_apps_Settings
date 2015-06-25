@@ -43,7 +43,7 @@ import com.android.settings.R;
 public class NavBarDimensions extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private static final String TAG = "NavBarStyleDimen";
+    private static final String TAG = "NavBarDimensions";
 
     private static final String KEY_DIMEN_OPTIONS = "navbar_dimensions";
     private static final String PREF_NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
