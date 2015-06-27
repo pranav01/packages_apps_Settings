@@ -1207,6 +1207,7 @@
 
     <string name="bluetooth_pan_profile_summary_use_for_error">Connection error; is Bluetooth tethering enabled on this device?</string>
 
+    <!-- Factory reset strings -->
     <string name="factory_reset_instructions_title">Personal data &amp; apps</string>
     <string name="factory_reset_instructions_summary">This will erase all your accounts, apps, app data, and system settings on this device</string>
     <string name="factory_reset_personal_content">Personal content</string>
