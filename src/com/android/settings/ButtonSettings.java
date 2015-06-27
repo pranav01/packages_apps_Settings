@@ -181,7 +181,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         mNavbarButtonTint = (ColorPickerPreference) findPreference(NAVIGATION_BAR_TINT);
         mNavbarButtonTint.setOnPreferenceChangeListener(this);
         int intColor = Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.NAVIGATION_BAR_TINT, 0xffffffff);
+                Settings.System.NAVIGATION_BAR_TINT, 0xffffffff);
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mNavbarButtonTint.setSummary(hexColor);
         mNavbarButtonTint.setNewPreviewColor(intColor);
@@ -549,7 +549,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.Secure.putInt(getActivity().getContentResolver(),
-                    Settings.Secure.NAVIGATION_BAR_TINT, intHex);
+                    Settings.System.NAVIGATION_BAR_TINT, intHex);
             return true;
         } else if (preference == mHomeLongPressAction) {
             handleActionListChange(mHomeLongPressAction, newValue,
