@@ -640,4 +640,8 @@
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
 
+    <!-- Statusbar Radium logo -->
+    <string name="status_bar_radium_logo_title">Radium logo</string>
+    <string name="status_bar_radium_logo_summary">Enable to show Radium logo on the left side of statusbar</string>
+
 </resources>
