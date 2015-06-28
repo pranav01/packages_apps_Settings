@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2015 DarkKat
+<!-- Copyright (C) 2015 Team-Radium
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
 -->
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/palette_carbon"
-        android:title="@string/palette_carbon_title"
+    <item android:id="@+id/palette_radium"
+        android:title="@string/palette_radium_title"
         />
     <item android:id="@+id/palette_material"
         android:title="@string/palette_material_title"
