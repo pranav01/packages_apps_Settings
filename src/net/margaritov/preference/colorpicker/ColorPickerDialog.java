@@ -76,14 +76,14 @@ public class ColorPickerDialog extends Dialog implements
 
     private final int mInitialColor;
     private final int mAndroidColor;
-    private final int mCarbonColor;
+    private final int mRadiumColor;
     private int mNewColorValue;
     private boolean mIsResetButtonEnabled = false;
 
-    private static final int PALETTE_CARBON  = 0;
+    private static final int PALETTE_RADIUM  = 0;
     private static final int PALETTE_MATERIAL = 1;
     private static final int PALETTE_RGB      = 2;
-    private int mPalette = PALETTE_CARBON;
+    private int mPalette = PALETTE_RADIUM;
 
     private static final int[][] mPaletteColors = {
             { Color.BLACK, 0xff1b1f23, 0xff33b5e5, 0xff009688,
@@ -101,12 +101,12 @@ public class ColorPickerDialog extends Dialog implements
     }
 
     public ColorPickerDialog(Context context, int theme, int initialColor,
-            int androidColor, int carbonColor) {
+            int androidColor, int radiumColor) {
         super(context, theme);
         mInitialColor = initialColor;
         mAndroidColor = androidColor;
-        mCarbonColor = carbonColor;
-        if (mAndroidColor != 0x00000000 && mCarbonColor != 0x00000000) {
+        mRadiumColor = radiumColor;
+        if (mAndroidColor != 0x00000000 && mRadiumColor != 0x00000000) {
             mIsResetButtonEnabled = true;
         }
 
@@ -274,8 +274,8 @@ public class ColorPickerDialog extends Dialog implements
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        if (item.getItemId() == R.id.palette_carbon) {
-            mPalette = PALETTE_CARBON;
+        if (item.getItemId() == R.id.palette_radium) {
+            mPalette = PALETTE_RADIUM;
             mColorTransitionAnimator.start();
             return true;
         } else if (item.getItemId() == R.id.palette_material) {
@@ -289,8 +289,8 @@ public class ColorPickerDialog extends Dialog implements
         } else if (item.getItemId() == R.id.reset_android) {
             mColorPicker.setColor(mAndroidColor, true);
             return true;
-        } else if (item.getItemId() == R.id.reset_carbon) {
-            mColorPicker.setColor(mCarbonColor, true);
+        } else if (item.getItemId() == R.id.reset_radium) {
+            mColorPicker.setColor(mRadiumColor, true);
             return true;
         }
         return false;
