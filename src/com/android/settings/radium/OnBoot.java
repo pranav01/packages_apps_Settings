@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
+import com.android.settings.util.CMDProcessor;
 
 import java.io.IOException;
 
