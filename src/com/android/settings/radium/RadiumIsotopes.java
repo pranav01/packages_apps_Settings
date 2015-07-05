@@ -16,9 +16,7 @@
 
 package com.android.settings.radium;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.ContentResolver;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
@@ -26,7 +24,7 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.text.TextUtils;
 import android.util.Log;
-import android.preference.SwitchPreference;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.DataOutputStream;
