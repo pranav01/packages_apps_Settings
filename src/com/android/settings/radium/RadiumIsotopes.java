@@ -25,8 +25,14 @@ import android.preference.PreferenceScreen;
 import android.text.TextUtils;
 import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.util.CMDProcessor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,13 +42,43 @@ import java.util.regex.Pattern;
 
 public class RadiumIsotopes extends SettingsPreferenceFragment {
 
+private static final String SELINUX = "selinux";
 private static final String KEY_UPDATE_SETTINGS = "update_settings";
 private static final String KEY_UPDATE_SETTINGS_PACKAGE_NAME = "com.radium.ota";
+
+private SwitchPreference mSelinux;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.radium_isotopes);
+ContentResolver resolver = getActivity().getContentResolver();
+        Activity activity = getActivity();
+        PreferenceScreen prefSet = getPreferenceScreen();
+	addPreferencesFromResource(R.xml.radium_isotopes);
+        mSelinux = (SwitchPreference) findPreference(SELINUX);
+        mSelinux.setOnPreferenceChangeListener(this);
+
+        if (CMDProcessor.runSuCommand("getenforce").getStdout().contains("Enforcing")) {
+            mSelinux.setChecked(true);
+            mSelinux.setSummary(R.string.selinux_enforcing_title);
+        } else {
+            mSelinux.setChecked(false);
+            mSelinux.setSummary(R.string.selinux_permissive_title);
+        }
     }
+	public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+	    if (preference == mSelinux) {
+                if (newValue.toString().equals("true")) {
+                     CMDProcessor.runSuCommand("setenforce 1");
+                    mSelinux.setSummary(R.string.selinux_enforcing_title);
+                } else if (newValue.toString().equals("false")) {
+                    CMDProcessor.runSuCommand("setenforce 0");
+                    mSelinux.setSummary(R.string.selinux_permissive_title);
+                }
+                return true;
+            }
+            return false;
+	}
 }

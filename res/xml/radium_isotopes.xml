@@ -64,6 +64,17 @@
 	    android:summary="@string/wakelock_blocker_summary" />
 	    
 
+	<Preference
+            android:key="selinux_switch"
+            android:title="@string/selinux_switch_title"
+            android:summary="@string/selinux_switch_summary"
+            android:selectable="false"/>
+
+        <SwitchPreference
+            android:key="selinux"
+            android:title="@string/selinux_title"
+            android:defaultValue="false" />
+
         <!-- Updater -->
        	<PreferenceScreen
                 android:key="update_settings"
