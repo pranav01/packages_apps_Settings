@@ -59,7 +59,7 @@
 
     	<PreferenceScreen
             android:key="wakelock_blocker"
-            android:fragment="com.android.settings.aicp.WakeLockBlocker"
+            android:fragment="com.android.settings.radium.WakeLockBlocker"
             android:title="@string/wakelock_blocker_title"
 	    android:summary="@string/wakelock_blocker_summary" />
 	    
