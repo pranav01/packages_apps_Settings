@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.settings.util.CMDProcessor;
+
 import java.io.IOException;
 import java.util.List;
 
