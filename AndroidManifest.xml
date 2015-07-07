@@ -2295,6 +2295,12 @@
 	    <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.radium.RadiumIsotopes" />
         </activity>
+
+	<receiver android:name="com.android.settings.radium.OnBoot">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
 		 
         <activity
              android:name=".radium.RadiumIsotopes" />

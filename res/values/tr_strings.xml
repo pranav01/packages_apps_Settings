@@ -584,14 +584,20 @@
     <string name="partition_info_sdext">/sd-ext (EXT)</string>
     <string name="partition_info_used_of">/</string>
 
-   <!-- About device screen, CPU and RAM info. -->
+    <!-- About device screen, CPU and RAM info. -->
     <string name="cpu_info">CPU</string>
     <string name="mem_info">RAM</string>
 
-        <!-- Ability to disable hardware keys via nav bar settings -->
+    <!-- Ability to disable hardware keys via nav bar settings -->
     <string name="hw_keys_title">Hardware keys</string>
     <string name="hw_keys_summary">Enable hardware keys</string>
-
+    
+    <!-- Selinux Switch -->
+    <string name="selinux_switch_title">Selinux Switch options</string>
+    <string name="selinux_switch_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk</string>
+    <string name="selinux_title">Selinux Mode</string>
+    <string name="selinux_permissive_title">Permissive</string>
+    <string name="selinux_enforcing_title">Enforcing</string>
 
 </resources>
 
