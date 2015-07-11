@@ -1245,11 +1245,8 @@
     <string name="fingerprint_enrollment_scan_instructions">Place your index finger on the fingerprint sensor to begin setup. Lift your finger once you feel a vibration.</string>
     <!-- Fingerprint enrollment error title during first step only -->
     <string name="fingerprint_enrollment_error_title_wrong_sensor">Please try again</string>
-<<<<<<< HEAD
     <!-- Fingerprint enrollment error title during all other steps -->
     <string name="fingerprint_enrollment_error_title">Oops. Try again</string>
-=======
->>>>>>> 478ccf458456db2c8b507558d2f91adc6194d656
     <!-- Fingerprint enrollment error message -->
     <string name="fingerprint_enrollment_error_message">Place your finger firmly on the fingerprint sensor to ensure an accurate scan. Also make sure you are using the same finger as before. Lift your finger once you feel a vibration.</string>
     <!-- Fingerprint enrollment error instructions -->
