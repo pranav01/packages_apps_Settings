@@ -35,6 +35,7 @@ import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
 import android.text.Spannable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -73,6 +74,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
     private SwitchPreference mStatusBarGreeting;
+    private SwitchPreference mTicker;
     private SeekBarPreferenceCham mStatusBarGreetingTimeout;
     private PreferenceScreen mCarrierLabel;
 
@@ -142,7 +144,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         final boolean tickerEnabled = systemUiResources.getBoolean(systemUiResources.getIdentifier(
                     "com.android.systemui:bool/enable_ticker", null, null));
         mTicker.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_TICKER_ENABLED, tickerEnabled ? 1 : 0) == 1);
+                Settings.System.STATUS_BAR_SHOW_TICKER, tickerEnabled ? 1 : 0) == 1);
         mTicker.setOnPreferenceChangeListener(this);
 
         int batteryStyle = Settings.System.getInt(resolver,
@@ -202,7 +204,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             return true;
         } else if (preference == mTicker) {
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_TICKER_ENABLED,
+                    Settings.System.STATUS_BAR_SHOW_TICKER,
                     (Boolean) newValue ? 1 : 0);
             return true;
         } else if (preference == mStatusBarBatteryShowPercent) {

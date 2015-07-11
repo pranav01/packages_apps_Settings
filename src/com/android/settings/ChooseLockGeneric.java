@@ -167,6 +167,7 @@ public class ChooseLockGeneric extends SettingsActivity {
                 // unlock method to an insecure one
                 showFactoryResetProtectionWarningDialog(key);
                 return true;
+	    }
             
 	    if (KEY_UNLOCK_SET_GESTURE.equals(key)) {
                 updateUnlockMethodAndFinish(
@@ -174,6 +175,7 @@ public class ChooseLockGeneric extends SettingsActivity {
             } else {
                 return setUnlockMethod(key);
             }
+	    return true;
         }
 
         /**

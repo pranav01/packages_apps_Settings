@@ -129,6 +129,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private KeyStore mKeyStore;
     private Preference mResetCredentials;
 
+    private ChooseLockSettingsHelper mChooseLockSettingsHelper;
+
     private SwitchPreference mToggleAppInstallation;
     private DialogInterface mWarnInstallApps;
 
@@ -145,6 +147,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
         mLockPatternUtils = new LockPatternUtils(getActivity());
         mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
+    }
 
     private static int getResIdForLockUnlockScreen(Context context,
             LockPatternUtils lockPatternUtils) {
