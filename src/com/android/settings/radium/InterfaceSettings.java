@@ -70,6 +70,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.radium_interface_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
+	final ContentResolver resolver = getActivity().getContentResolver();
 
         mHeadsUp = findPreference(Settings.System.HEADS_UP_NOTIFICATION);
         mEnableTaskManager = (SwitchPreference) findPreference(ENABLE_TASK_MANAGER);
