@@ -167,15 +167,9 @@ public class ChooseLockGeneric extends SettingsActivity {
                 // unlock method to an insecure one
                 showFactoryResetProtectionWarningDialog(key);
                 return true;
-	    }
-            
-	    if (KEY_UNLOCK_SET_GESTURE.equals(key)) {
-                updateUnlockMethodAndFinish(
-                        DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK, false);
             } else {
                 return setUnlockMethod(key);
             }
-	    return true;
         }
 
         /**
@@ -622,6 +616,9 @@ public class ChooseLockGeneric extends SettingsActivity {
             } else if (KEY_UNLOCK_SET_PASSWORD.equals(unlockMethod)) {
                 maybeEnableEncryption(
                         DevicePolicyManager.PASSWORD_QUALITY_ALPHABETIC, false);
+	    } else if (KEY_UNLOCK_SET_GESTURE.equals(key)) {
+                updateUnlockMethodAndFinish(
+                        DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK, false);
             } else if (KEY_UNLOCK_SET_FINGERPRINT.equals(unlockMethod)) {
                 maybeEnableEncryption(
                         DevicePolicyManager.PASSWORD_QUALITY_BIOMETRIC_WEAK, false,
