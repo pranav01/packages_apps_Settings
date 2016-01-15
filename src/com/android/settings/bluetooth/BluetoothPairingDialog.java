@@ -198,8 +198,14 @@ public final class BluetoothPairingDialog extends AlertActivity implements
         } else if (mDevice.getPhonebookAccessPermission() == BluetoothDevice.ACCESS_REJECTED){
             contactSharing.setChecked(false);
         } else {
-            contactSharing.setChecked(true);
-            mDevice.setPhonebookAccessPermission(BluetoothDevice.ACCESS_ALLOWED);
+            if (mDevice.getBluetoothClass().getDeviceClass()
+                    == BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE) {
+                contactSharing.setChecked(true);
+                mDevice.setPhonebookAccessPermission(BluetoothDevice.ACCESS_ALLOWED);
+            } else {
+                contactSharing.setChecked(false);
+                mDevice.setPhonebookAccessPermission(BluetoothDevice.ACCESS_REJECTED);
+            }
         }
 
         contactSharing.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -212,12 +218,14 @@ public final class BluetoothPairingDialog extends AlertActivity implements
                 }
             }
         });
+
         if ((mDevice.getBluetoothClass() != null) && (mDevice.getBluetoothClass().getDeviceClass()
                     == BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE)) {
             contactSharing.setVisibility(View.VISIBLE);
         } else {
             contactSharing.setVisibility(View.GONE);
         }
+
         mPairingView = (EditText) view.findViewById(R.id.text);
         mPairingView.addTextChangedListener(this);
         alphanumericPin.setOnCheckedChangeListener(this);
@@ -270,8 +278,14 @@ public final class BluetoothPairingDialog extends AlertActivity implements
         } else if (mDevice.getPhonebookAccessPermission() == BluetoothDevice.ACCESS_REJECTED){
             contactSharing.setChecked(false);
         } else {
-            contactSharing.setChecked(true);
-            mDevice.setPhonebookAccessPermission(BluetoothDevice.ACCESS_ALLOWED);
+            if (mDevice.getBluetoothClass().getDeviceClass()
+                    == BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE) {
+                contactSharing.setChecked(true);
+                mDevice.setPhonebookAccessPermission(BluetoothDevice.ACCESS_ALLOWED);
+            } else {
+                contactSharing.setChecked(false);
+                mDevice.setPhonebookAccessPermission(BluetoothDevice.ACCESS_REJECTED);
+            }
         }
 
         contactSharing.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -284,12 +298,15 @@ public final class BluetoothPairingDialog extends AlertActivity implements
                 }
             }
         });
+<<<<<<< HEAD
         if ((mDevice.getBluetoothClass() != null) && (mDevice.getBluetoothClass().getDeviceClass()
                     == BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE)) {
             contactSharing.setVisibility(View.VISIBLE);
         } else {
             contactSharing.setVisibility(View.GONE);
         }
+=======
+>>>>>>> android-6.0.1_r10
 
         String messageCaption = null;
         String pairingContent = null;
